@@ -16,22 +16,22 @@ public class App {
         grafo.agregarArista(2, 4, 2);
         grafo.agregarArista(3, 4, 7);
         validarMatriz(grafo.obtenerMatriz(), new int[][] {
-            {0, 10, 3, 0, 0},
-            {0, 0, 1, 2, 0},
-            {0, 4, 0, 8, 2},
-            {0, 0, 0, 0, 7},
-            {0, 0, 0, 0, 0}
+            {0, 10, 3, Integer.MAX_VALUE, Integer.MAX_VALUE},
+            {Integer.MAX_VALUE, 0, 1, 2, Integer.MAX_VALUE},
+            {Integer.MAX_VALUE, 4, 0, 8, 2},
+            {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 7},
+            {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0}
         });
 
         // Prueba eliminarArista
         System.out.println("\n🔹 Prueba eliminarArista");
         grafo.eliminarArista(2, 4);
         validarMatriz(grafo.obtenerMatriz(), new int[][] {
-            {0, 10, 3, 0, 0},
-            {0, 0, 1, 2, 0},
-            {0, 4, 0, 8, 0}, // (2,4) eliminado
-            {0, 0, 0, 0, 7},
-            {0, 0, 0, 0, 0}
+            {0, 10, 3, Integer.MAX_VALUE, Integer.MAX_VALUE},
+            {Integer.MAX_VALUE, 0, 1, 2, Integer.MAX_VALUE},
+            {Integer.MAX_VALUE, 4, 0, 8, Integer.MAX_VALUE}, // (2,4) eliminado
+            {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0, 7},
+            {Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE, 0}
         });
 
         // Prueba BFS
