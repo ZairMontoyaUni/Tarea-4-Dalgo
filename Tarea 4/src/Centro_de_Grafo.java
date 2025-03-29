@@ -33,8 +33,23 @@ public class Centro_de_Grafo {
                 // Llamar a la función y luego mostrar el resultado
                   
             }
+            // Leer el nodo de inicio
+            System.out.println("Ingrese el centro de inicio:");
+            String ingreso = br.readLine();
+            if (ingreso == null || ingreso.trim().isEmpty()) {
+                System.out.println((Integer) null);
+                return; // Salir si la entrada es nula o vacía
+            }
+            int inicio = Integer.parseInt(ingreso.trim());
+            System.out.println("Ingrese el centro de fin:");
+            String ingreso2 = br.readLine();
+            if (ingreso2 == null || ingreso2.trim().isEmpty()) {
+                System.out.println((Integer) null);
+                return; // Salir si la entrada es nula o vacía
+            }
+            int fin = Integer.parseInt(ingreso2.trim());
             try {
-                Integer resultado = Centro_Grafo(grafo);
+                int resultado = Centro_Grafo(grafo, inicio, fin);
                 System.out.println(resultado);
             } catch (Exception e) {
                 System.out.println((Integer) null);
@@ -42,9 +57,9 @@ public class Centro_de_Grafo {
         } 
     }
     
-
-    public static Integer Centro_Grafo(Grafos grafo){
+    public static int Centro_Grafo(Grafos grafo, Integer inicio , Integer fin ){
         grafo.mostrarMatriz();
-        return -1 ;
+        int[] rutas = grafo.dijkstra(inicio);
+        return rutas[fin] ;
     }
 }
